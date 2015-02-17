@@ -17,55 +17,55 @@ unzip(zipfile="./data/Dataset.zip",exdir="./data")
 
 # Read data from the files into the variables
 
-3. Read the Activity files
+*Read the Activity files
 
 dataActivityTest  <- read.table(file.path(path_rf, "test" , "Y_test.txt" ),header = FALSE)
 dataActivityTrain <- read.table(file.path(path_rf, "train", "Y_train.txt"),header = FALSE)
 
-4. Read the Subject files
+*Read the Subject files
 
 dataSubjectTrain <- read.table(file.path(path_rf, "train", "subject_train.txt"),header = FALSE)
 dataSubjectTest  <- read.table(file.path(path_rf, "test" , "subject_test.txt"),header = FALSE)
 
-5. Read Fearures files
+*Read Fearures files
 
 dataFeaturesTest  <- read.table(file.path(path_rf, "test" , "X_test.txt" ),header = FALSE)
 dataFeaturesTrain <- read.table(file.path(path_rf, "train", "X_train.txt"),header = FALSE)
 
 # Merge the training and the test sets to create one data set
 
-6. Concatenate the data tables by rows
+*Concatenate the data tables by rows
 
 dataSubject <- rbind(dataSubjectTrain, dataSubjectTest)
 dataActivity<- rbind(dataActivityTrain, dataActivityTest)
 dataFeatures<- rbind(dataFeaturesTrain, dataFeaturesTest)
 
-7. Set names to variables
+*Set names to variables
 
 names(dataSubject)<-c("subject")
 names(dataActivity)<- c("activity")
 dataFeaturesNames <- read.table(file.path(path_rf, "features.txt"),head=FALSE)
 names(dataFeatures)<- dataFeaturesNames$V2
 
-8. Merge columns to get the data frame Data for all data
+*Merge columns to get the data frame Data for all data
 
 dataCombine <- cbind(dataSubject, dataActivity)
 Data <- cbind(dataFeatures, dataCombine)
 
 # Extract only the measurements on the mean and standard deviation for each measurement
 
-9. Subset Name of Features by measurements on the mean and standard deviation
+*Subset Name of Features by measurements on the mean and standard deviation
 
 subdataFeaturesNames<-dataFeaturesNames$V2[grep("mean\\(\\)|std\\(\\)", dataFeaturesNames$V2)]
 
-10. Subset the data frame Data by seleted names of Features
+*Subset the data frame Data by seleted names of Features
 
 selectedNames<-c(as.character(subdataFeaturesNames), "subject", "activity" )
 Data<-subset(Data,select=selectedNames)
 
 # Use descriptive activity names to name the activities in the data set
 
-11. Read descriptive activity names from “activity_labels.txt”
+*Read descriptive activity names from “activity_labels.txt”
 
 activityLabels <- read.table(file.path(path_rf, "activity_labels.txt"),header = FALSE)
 
