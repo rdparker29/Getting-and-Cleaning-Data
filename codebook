@@ -1,6 +1,8 @@
-#Codebook for run_analysis.R
-
-##Variables in the tidy data set
+###############################################################################################################
+###                 Codebook for run_analysis.R                                                             ###
+###                                                                                                         ###
+###                 Variables in the tidy data set                                                          ###
+###############################################################################################################
 
     subject        activity   timeBodyAccelerometer-mean()-X timeBodyAccelerometer-mean()-Y
  Min.   : 1.0   Min.   :1.0   Min.   :0.2216                 Min.   :-0.040514             
