@@ -1,16 +1,17 @@
-# Getting-and-Cleaning-Data
+## Getting-and-Cleaning-Data
 Repo for Course Project for Getting and Cleaning Data Coursera course from John Hopkins
 
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
 # Get the data
-1.Download the file and put the file in the data folder
+
+*Download the file and put the file in the data folder
 
 if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./data/Dataset.zip",method="curl")
 
-2.Unzip the file
+*Unzip the file
 
 unzip(zipfile="./data/Dataset.zip",exdir="./data")
 
