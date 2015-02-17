@@ -5,7 +5,7 @@ The purpose of this project is to demonstrate the ability to collect, work with,
 
 ## Get the data
 
-*Download the file and put the file in the data folder
+###Download the file and put the file in the data folder
 
 if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
